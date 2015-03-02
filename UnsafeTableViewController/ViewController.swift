@@ -8,18 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class ViewController: UnsafeTableViewController {
+    let name: String
+    
+    init(name: String) {
+        self.name = name
+        super.init(style1: .Plain)
+//        super.init(style2: .Plain)
+//        super.init(style3: .Plain)
+//        super.init(style4: .Plain)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
-
 }
 
