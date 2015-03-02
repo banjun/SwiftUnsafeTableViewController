@@ -12,7 +12,7 @@
 
 - (instancetype)initWithStyle1:(UITableViewStyle)style;
 {
-    // Unsafe: declared implicitly (as convenience), implemented as convenience
+    // Unsafe: declared implicitly (as convenience? or designated?), implemented as convenience
     // => ViewController.swift: 11: 7: fatal error: use of unimplemented initializer 'init(nibName:bundle:)' for class 'UnsafeTableViewController.ViewController'
     if (self = [self initWithNibName:nil bundle:nil]) {
         self.view = [[UITableView alloc] initWithFrame:CGRectZero style:style];
@@ -23,7 +23,7 @@
 
 - (instancetype)initWithStyle2:(UITableViewStyle)style;
 {
-    // incorrect but safe?: declared implicitly (as convenience), implemented as designated
+    // incorrect but safe?: declared implicitly (as convenience? or designated?), implemented as designated
     if (self = [super initWithNibName:nil bundle:nil]) {
         self.view = [[UITableView alloc] initWithFrame:CGRectZero style:style];
     }
